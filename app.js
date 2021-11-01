@@ -3,16 +3,12 @@ const app=express();
 const mongoose=require('mongoose');
 const dotenv=require('dotenv')
 
-const DB='mongodb+srv://tanaya:tanaya@cluster0.kiajp.mongodb.net/mernstack?retryWrites=true&w=majority';
+dotenv.config({path:'./config.env'})
+require('./db/conn')
 
-mongoose.connect(DB,{
-    useNewUrlParser:true,
-    useCreateIndex:true,
-    useUnifiedTopology:true,
-    useFindAndModify:false
-}).then(()=>{
-    console.log(`connection successful`)
-}).catch((err)=>console.log(err));
+const PORT=process.env.PORT
+
+
 
 const middleware=(req,res,next)=>{
     console.log('Middleware');
@@ -31,7 +27,7 @@ app.get('/contact',middleware,(req,res)=>{
     res.send('Contact Page')
 })
 
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log('server is running at port 3000')
 })
 
