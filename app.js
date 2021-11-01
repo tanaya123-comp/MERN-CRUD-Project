@@ -1,19 +1,25 @@
 const express=require('express')
 const app=express();
 const mongoose=require('mongoose');
+const dotenv=require('dotenv')
 
-const DB='mongodb+srv://tanaya:9ANKRsvzddnjriwd@cluster0.kiajp.mongodb.net/mernstack?retryWrites=true&w=majority';
+const DB='mongodb+srv://tanaya:tanaya@cluster0.kiajp.mongodb.net/mernstack?retryWrites=true&w=majority';
 
-mongoose.connect(DB).then(()=>{
-    console.log('connection successful')
-}).catch((err)=>console.log('no connection'))
+mongoose.connect(DB,{
+    useNewUrlParser:true,
+    useCreateIndex:true,
+    useUnifiedTopology:true,
+    useFindAndModify:false
+}).then(()=>{
+    console.log(`connection successful`)
+}).catch((err)=>console.log(err));
 
 const middleware=(req,res,next)=>{
     console.log('Middleware');
     next();
 }
 
-app.get('/',(req,res)=>{
+app.get('/',middleware,(req,res)=>{
     res.send('Hello world')
 })
 
@@ -21,7 +27,7 @@ app.get('/about',middleware,(req,res)=>{
     res.send('About')
 })
 
-app.get('/contact',(req,res)=>{
+app.get('/contact',middleware,(req,res)=>{
     res.send('Contact Page')
 })
 
