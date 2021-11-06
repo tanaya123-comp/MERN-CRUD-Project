@@ -1,5 +1,6 @@
 const express=require('express')
 const router=express.Router()
+const bcrypt=require('bcryptjs')
 
 require('../db/conn')
 
@@ -77,13 +78,22 @@ router.post('/signin',async (req,res)=>{
 
         const userLogin=await User.findOne({email:email});
 
-        if(userLogin)
-        {
-            return res.status(201).json({message:'User is  present'})
+        if(userLogin){
+
+            const isMatch=await bcrypt.compare(password,userLogin.password);
+
+            if(isMatch)
+            {
+                return res.status(201).json({message:'User is  present'})
+            }
+            else{
+
+                return res.status(422).json({error:'User is not present'})
+            }
+
         }
-        else{
-            return res.status(422).json({error:'User is not present'})
-        }
+
+       
 
 
 
