@@ -1,6 +1,7 @@
 const express=require('express')
 const router=express.Router()
 const bcrypt=require('bcryptjs')
+const jwt=require('jsonwebtoken');
 
 require('../db/conn')
 
@@ -81,6 +82,8 @@ router.post('/signin',async (req,res)=>{
         if(userLogin){
 
             const isMatch=await bcrypt.compare(password,userLogin.password);
+
+            const token=await userLogin.generateAuthToken();
 
             if(isMatch)
             {
