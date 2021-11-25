@@ -28,6 +28,7 @@ app.get('/about',middleware,(req,res)=>{
 })
 
 app.get('/contact',middleware,(req,res)=>{
+    res.cookie('Test','thapa')
     res.send('Contact Page')
 })
 
