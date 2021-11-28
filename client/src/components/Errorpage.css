@@ -1,0 +1,12 @@
+.errorMsg{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-top: 40vh;
+}
+
+.backButton{
+    height: 30px;
+    width:100px;
+    background: cornflowerblue;
+}

@@ -7,6 +7,7 @@ import Register from './components/Register';
 import { Route,Switch } from "react-router-dom";
 import { BrowserRouter} from 'react-router-dom'
 import './App.css'
+import Errorpage from "./components/Errorpage";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route  path='/contact' exact component={Contact}></Route>
       <Route  path='/login' exact component={Login}></Route>
       <Route  path='/register' exact component={Register}></Route>
+      <Route path='/error' exact component={Errorpage}></Route>
       </Switch>
       </BrowserRouter>
     </div>
