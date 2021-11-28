@@ -1,0 +1,16 @@
+.home-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40vh;
+}
+
+.welcome-text{
+    color: blue;
+}
+
+/* .home{
+    background: #BBE7FE;
+    
+} */

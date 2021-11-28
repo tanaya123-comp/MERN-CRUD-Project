@@ -1,0 +1,108 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.signup-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+   
+}
+
+.container2{
+    position: relative;
+  /* width: 350px;
+  /* height: 500px; */ 
+  width:500px;
+  border-radius: 20px;
+  padding-top: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  
+}
+
+.brand-title{
+    margin-top: 10px;
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: #1DA1F2;
+  letter-spacing: 1px;
+}
+
+.inputs{
+    text-align: left;
+  margin-top: 30px;
+}
+
+.label1  {
+    display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input1 {
+    display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.button1 {
+    display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+
+
+.label1 {
+    margin-bottom: 4px;
+  }
+  
+  .label1:nth-of-type(2) {
+    margin-top: 12px;
+  }
+  
+  .input1::placeholder {
+    color: gray;
+  }
+  
+  .input1 {
+    background: #ecf0f3;
+    padding: 10px;
+    padding-left: 20px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  }
+  
+  .button1 {
+    margin-top: 20px;
+    background: #1DA1F2;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+  }
+  
+  .button1:hover {
+    box-shadow: none;
+  }
