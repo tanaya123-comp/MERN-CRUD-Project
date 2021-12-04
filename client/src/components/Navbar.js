@@ -16,7 +16,7 @@ function Navbar() {
                     <ul className="navbar-nav ml-auto" style={{marginLeft:"auto"}}>
                         
                         <li className="nav-item  ">
-                        <Link className="nav-link active" to='/'>Home</Link>
+                        <Link className="nav-link" to='/'>Home</Link>
                         </li>
                         <li className="nav-item ">
                         <Link className="nav-link" to="/about">About</Link>
